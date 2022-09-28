@@ -1,0 +1,25 @@
+@import "../../../../../../shared/mixins.scss";
+
+
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 59px;
+  @include fontBig;
+  text-transform: uppercase;
+}
+
+.link:hover {
+  background: #0A3145;
+}
+
+.link__img {
+  margin-left: 23px;
+  margin-right: 16px;
+}
+
+.link__text {
+  @include fontBig;
+  color: #FFFFFF;
+}

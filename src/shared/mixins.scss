@@ -2,3 +2,22 @@
   width: $width;
   height: $height;
 }
+
+@mixin font {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+}
+
+@mixin fontSmall {
+  @include font;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+@mixin fontBig {
+  @include font;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+}

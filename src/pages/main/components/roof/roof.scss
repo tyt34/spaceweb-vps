@@ -1,0 +1,72 @@
+@import "../../../../shared/mixins.scss";
+
+.roof {
+  display: flex;
+  height: 60px;
+  background-color: #F5F5F5;
+  color: #7A8185;
+}
+
+.roof-open {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.roof__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 32px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.roof__main-open {
+  position: relative;
+  left: 211px;
+  overflow: hidden;
+}
+
+.roof__button-menu {
+  cursor: pointer;
+  @include size(20px, 16px);
+}
+
+.roof__button-menu-open {
+  visibility: hidden;
+}
+
+.roof__panel {
+  display: flex;
+}
+
+.roof__balance {
+  margin-right: 34.5px;
+  @include fontSmall;
+}
+
+.roof__notice {
+  cursor: pointer;
+  @include size(15px, 17px);
+  margin-right: 10.5px;
+}
+
+.roof__user {
+  margin-right: 24px;
+  @include fontSmall;
+}
+
+.roof__text-exit {
+  @include fontSmall;
+}
+
+.roof__button-exit {
+  cursor: pointer;
+  color: #7A8185;
+}
+
+@media screen and (min-width: 768px) {
+  .roof__main {
+    width: calc(100% - 40px);
+  }
+}

@@ -355,6 +355,7 @@ p {
 button {
   border: 0;
   padding: 0;
+  background-color: transparent;
 }
 
 h1 {
@@ -378,4 +379,8 @@ input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
     margin: 0; /* <-- Apparently some margin are still there even though it is hidden */
+}
+
+a {
+  text-decoration: none;
 }

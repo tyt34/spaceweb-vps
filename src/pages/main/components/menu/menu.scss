@@ -1,0 +1,52 @@
+@import "../../../../shared/mixins.scss";
+
+.menu {
+  @include size(100%, 100%);
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #062436;
+}
+
+.menu-close {
+  display: none;
+}
+
+.menu__top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.menu__logo {
+  margin-top: 19px;
+}
+
+.menu__button-menu {
+  @include size(20px, 18px);
+  margin-top: 21px;
+  cursor: pointer;
+}
+
+.menu__link-text {
+  @include fontBig;
+  color: #FFFFFF;
+}
+
+.menu__name {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: #3DBDF6;
+}
+
+.menu__name-ico {
+  @include size(22px, 21px);
+  margin-left: 21px;
+  margin-right: 16px;
+}
+

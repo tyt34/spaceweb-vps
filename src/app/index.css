@@ -1,4 +1,5 @@
 @import url(./../shared/vendor/normalize.css);
+@import url(./../shared/vendor/inter.css);
 
 body {
   background-color: #202124;
