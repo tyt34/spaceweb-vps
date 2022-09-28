@@ -1,0 +1,50 @@
+@import "../../../../shared/mixins.scss";
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  @include size(calc(100% - 16px), 210px);
+  background-color: #F5F5F5;
+  @include fontSmall;
+  padding-top: 20px;
+  padding-left: 16px;
+  z-index: 2;
+}
+
+.footer__text-blue {
+  color: #3DBDF6;
+}
+
+.footer__text-app {
+  margin-top: 20px;
+}
+
+.footer__link-img {
+  margin-top: 5px;
+}
+
+.footer__link-img:nth-child(1) {
+  margin-right: 5px;
+}
+
+.footer__text-numbers {
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    width: calc(100% - 20px);
+    display: grid;
+    padding-left: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 65px 50px;
+  }
+
+  .footer__text-app {
+    margin-top: 0;
+  }
+
+  .footer__text-numbers {
+    margin-top: 0;
+  }
+}

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './main.scss'
 import Menu from './components/menu/menu'
 import Roof from './components/roof/roof'
+import Footer from './components/footer/footer'
 
 function Main(): React.ReactElement {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(true)
@@ -24,6 +25,8 @@ function Main(): React.ReactElement {
         menuIsOpen={menuIsOpen}
         setMenuIsOpen={changeMenuIsOpen}
       />
+
+      <Footer />
     </div>
   )
 }

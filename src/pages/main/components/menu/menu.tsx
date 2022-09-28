@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './menu.scss'
 import LinkMenu from './components/link-menu/link-menu'
 // изображения для самого меню
@@ -66,6 +66,45 @@ function Menu(
     setMenuIsOpen
   }: Props): React.ReactElement {
 
+  const { width } = useWindowDimensions()
+
+  function useWindowDimensions(): { width: number } {
+    const [windowDimensions, setWindowDimensions] = useState(
+      getWindowDimensions()
+    )
+
+    useEffect(() => {
+      function handleResize(): void {
+        setWindowDimensions(getWindowDimensions())
+      }
+
+      window.addEventListener('resize', handleResize)
+      return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
+    return windowDimensions
+  }
+
+  function getWindowDimensions(): { width: number } {
+    const { innerWidth: width } = window
+
+    return {
+      width
+    }
+  }
+
+  function handleMenu() {
+    if (width < 1280) {
+      setMenuIsOpen(menuIsOpen)
+    }
+  }
+
+  useEffect( () => {
+    if (width < 1280) {
+      setMenuIsOpen(false)
+    }
+  }, [width])
+
   return (
     <section
     className={
@@ -94,7 +133,7 @@ function Menu(
             :
             'menu__button-menu'
           }
-          onClick={ () => {setMenuIsOpen(menuIsOpen)}}
+          onClick={handleMenu}
         >
           <img 
             className='menu__menu-ico'
