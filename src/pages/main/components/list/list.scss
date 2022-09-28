@@ -1,0 +1,40 @@
+@import "../../../../shared/mixins.scss";
+
+.list {
+  background: #FFFFFF;
+  box-shadow: 1px 1px 4px #E3E9EC;
+}
+
+.list__account {
+  @include fontMini;
+  color: #062436;
+  padding-top: 17px;
+  margin-left: 16px;
+}
+
+.list__order {
+  @include fontVeryBig;
+  margin-top: 11px;
+  margin-left: 16px;
+  color: #062436;
+}
+
+.list__category {
+  @include fontSmall;
+  color: #7A8185;
+  margin-top: 33px;
+  margin-left: 16px;
+}
+
+.css-1okebmr-indicatorSeparator {
+  display: none;
+}
+
+.list__select {
+  //align-items: center;
+  margin-top: 12px;
+  margin-bottom: 20px;
+  width: calc(100% - 32px);
+  margin-left: auto;
+  margin-right: auto;
+}

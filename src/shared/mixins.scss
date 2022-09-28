@@ -8,6 +8,13 @@
   font-style: normal;
 }
 
+@mixin fontMini {
+  @include font;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+}
+
 @mixin fontSmall {
   @include font;
   font-weight: 400;
@@ -20,4 +27,12 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
+}
+
+@mixin fontVeryBig {
+  @include font;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
 }

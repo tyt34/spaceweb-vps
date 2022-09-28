@@ -3,15 +3,17 @@ import './main.scss'
 import Menu from './components/menu/menu'
 import Roof from './components/roof/roof'
 import Footer from './components/footer/footer'
+import List from './components/list/list'
 import { getData } from '../../shared/api/main'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { getDataFromApi } from './main.slice'
+import { RootState } from '../../app/store'
 
 function Main(): React.ReactElement {
   const dispatch = useDispatch()
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(true)
-  const storeData = useSelector( (store: any) => store.data)
+  const storeData = useSelector( (store: RootState) => store.data)
 
   useEffect(() => {
     getData()
@@ -42,6 +44,8 @@ function Main(): React.ReactElement {
         menuIsOpen={menuIsOpen}
         setMenuIsOpen={changeMenuIsOpen}
       />
+
+      <List />
 
       <Footer />
     </div>

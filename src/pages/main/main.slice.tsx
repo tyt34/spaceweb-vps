@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { typeReq } from "../../shared/types/main"
+import type { PayloadAction } from '@reduxjs/toolkit'
 
 interface Props {
   data: typeReq
@@ -25,7 +26,7 @@ export const counterReducer = createSlice({
   name: 'data',
   initialState,
   reducers: {
-    getDataFromApi: (state, action: any) => {
+    getDataFromApi: (state, action: PayloadAction<typeReq>) => {
       state.data = action.payload
     },
   },
