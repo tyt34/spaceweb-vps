@@ -1,7 +1,7 @@
+import React from 'react'
 import './list.scss'
 
-function List() {
-
+function List(): React.ReactElement {
   return (
     <div
       className='main'
@@ -11,4 +11,3 @@ function List() {
 }
 
 export default List
-

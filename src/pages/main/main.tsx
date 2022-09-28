@@ -4,14 +4,19 @@ import Menu from './components/menu/menu'
 import Roof from './components/roof/roof'
 import Footer from './components/footer/footer'
 import { getData } from '../../shared/api/main'
+import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { getDataFromApi } from './main.slice'
 
 function Main(): React.ReactElement {
+  const dispatch = useDispatch()
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(true)
+  const storeData = useSelector( (store: any) => store.data)
 
   useEffect(() => {
     getData()
-      .then( (res) => {
-        console.log(' ---> ', res)
+      .then((res) => {
+        dispatch(getDataFromApi(res))
       })
   }, [])
 
@@ -19,17 +24,21 @@ function Main(): React.ReactElement {
     setMenuIsOpen(!menuIsOpen)
   }
 
-  //console.log(' menuIsOpen: ', menuIsOpen)
+  useEffect(() => {
+    console.log(' d: ', storeData)
+  }, [storeData])
+
+  //console.log(' menuIsOpen: ', menuIsOpen, storeData)
 
   return (
     <div
       className='main'
     >
-      <Roof 
+      <Roof
         menuIsOpen={menuIsOpen}
         setMenuIsOpen={changeMenuIsOpen}
       />
-      <Menu 
+      <Menu
         menuIsOpen={menuIsOpen}
         setMenuIsOpen={changeMenuIsOpen}
       />
@@ -40,4 +49,3 @@ function Main(): React.ReactElement {
 }
 
 export default Main
-

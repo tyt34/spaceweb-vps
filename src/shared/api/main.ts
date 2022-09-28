@@ -1,6 +1,6 @@
 import { typeReq } from "../types/main"
 
-export const getData = (): Promise<typeReq[]> => {
+export const getData = (): Promise<typeReq> => {
   return fetch(`https://api.sweb.ru/notAuthorized/`, {
     method: 'POST',
     body: JSON.stringify(

@@ -11,17 +11,16 @@ function LinkMenu(
     title,
     img
   }: Props
-) {
-
+): React.ReactElement {
   return (
     <a
       className='link'
       href="https://sweb.ru/"
     >
-      <img 
+      <img
         className='link__img'
         src={img}
-        alt="иконка меню" 
+        alt="иконка меню"
       />
       <p
         className='link__text'
@@ -33,4 +32,3 @@ function LinkMenu(
 }
 
 export default LinkMenu
-

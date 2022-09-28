@@ -1,7 +1,7 @@
 import React from 'react'
 import './roof.scss'
-import icoMenu from "./assets/ico-menu.png"
-import notice from "./assets/notice.png"
+import icoMenu from './assets/ico-menu.png'
+import notice from './assets/notice.png'
 
 interface Props {
   menuIsOpen: boolean
@@ -13,37 +13,33 @@ function Roof(
     menuIsOpen,
     setMenuIsOpen
   }: Props): React.ReactElement {
-
   return (
     <section
       className={
-        menuIsOpen ?
-        'roof'
-        :
-        'roof roof-open'
+        menuIsOpen
+          ? 'roof'
+          : 'roof roof-open'
       }
     >
       <div
         className={
-          menuIsOpen ?
-          'roof__main'
-          :
-          'roof__main roof__main-open'
+          menuIsOpen
+            ? 'roof__main'
+            : 'roof__main roof__main-open'
         }
       >
         <button
           className={
-            menuIsOpen ?
-            'roof__button-menu'
-            :
-            'roof__button-menu roof__button-menu-open'
+            menuIsOpen
+              ? 'roof__button-menu'
+              : 'roof__button-menu roof__button-menu-open'
           }
-          onClick={ () => {setMenuIsOpen(menuIsOpen)}}
+          onClick={ () => { setMenuIsOpen(menuIsOpen) }}
         >
-          <img 
+          <img
             className='roof__menu-ico'
             src={icoMenu}
-            alt="иконка кнопки открытия/закрытия меню" 
+            alt="иконка кнопки открытия/закрытия меню"
           />
         </button>
         <div
@@ -54,10 +50,10 @@ function Roof(
           >
             3467 ₽
           </p>
-          <img 
+          <img
             className='roof__notice'
             src={notice}
-            alt="" 
+            alt=""
           />
           <p
             className='roof__user'
@@ -80,4 +76,3 @@ function Roof(
 }
 
 export default Roof
-

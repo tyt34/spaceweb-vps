@@ -1,7 +1,7 @@
+import React from 'react'
 import './tariff.scss'
 
-function Tariff() {
-
+function Tariff(): React.ReactElement {
   return (
     <div
       className='main'
@@ -11,4 +11,3 @@ function Tariff() {
 }
 
 export default Tariff
-
