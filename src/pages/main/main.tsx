@@ -1,11 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './main.scss'
 import Menu from './components/menu/menu'
 import Roof from './components/roof/roof'
 import Footer from './components/footer/footer'
+import { getData } from '../../shared/api/main'
 
 function Main(): React.ReactElement {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(true)
+
+  useEffect(() => {
+    getData()
+      .then( (res) => {
+        console.log(' ---> ', res)
+      })
+  }, [])
 
   function changeMenuIsOpen(menuIsOpen: boolean): void {
     setMenuIsOpen(!menuIsOpen)
