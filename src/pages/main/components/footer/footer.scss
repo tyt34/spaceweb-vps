@@ -1,7 +1,6 @@
 @import "../../../../shared/mixins.scss";
 
 .footer {
-  position: absolute;
   bottom: 0;
   @include size(calc(100% - 16px), 210px);
   background-color: #F5F5F5;

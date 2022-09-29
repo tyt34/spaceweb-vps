@@ -7,7 +7,7 @@ import {
 } from "../../../../shared/types/main"
 import { RootState } from '../../../../app/store'
 import { useSelector } from 'react-redux'
-import Tariff from './tariff/tarif'
+import Tariff from './components/tariff/tarif'
 
 const defaultSeletType: ISelectType = { 
   value: 'all', 

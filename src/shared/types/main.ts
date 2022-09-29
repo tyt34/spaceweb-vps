@@ -55,7 +55,7 @@ interface IOsPanel {
   panel: string
 }
 
-interface ISelectOs {
+export interface ISelectOs {
   description: string
   id: string
   name: string
@@ -94,6 +94,9 @@ export interface IVpsPlans {
   disk_type: string
   id: number
   is_promo: string
+  /**
+   * полное название категории
+   */
   name: string
   package_duration: string
   parent_plan_id: null

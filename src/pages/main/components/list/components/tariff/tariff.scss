@@ -1,0 +1,63 @@
+@import "../../../../../../shared/mixins.scss";
+
+.tariff {
+  height: 547px;
+  min-width: calc(280px - 32px);
+  max-width: 303px;
+  display: flex;
+  flex-direction: column;
+  background: #C4EBF8;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.tariff__top {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  height: 25px;
+}
+
+.tariff__ico {
+  @include size(25px, 25px);
+}
+
+.tariff__title {
+  @include fontSmall;
+  margin-left: 16px;
+  height: 12px;
+}
+
+.tariff__cost {
+  @include fontVeryBig;
+  margin-top: 14px;
+  color: #000000;
+}
+
+.tariff__power {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @include fontSmall;
+  color: #62686C;
+  margin-top: 18px;
+}
+
+.tariff__power-number {
+  @include fontNormal;
+  color: #000000;
+}
+
+.tariff__text-select {
+  @include fontSmall;
+  margin-top: 20px;
+  color: #62686C;
+}
+
+.tariff__select {
+  margin-top: 8px;
+}
