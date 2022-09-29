@@ -1,0 +1,108 @@
+@import "../../../../../../../../shared/mixins.scss";
+
+.checkbox {
+  @include fontSmall;
+  width: 192px;
+  height: 20px;
+  margin-top: 8px;
+}
+
+.check {
+  position: relative;
+  width: 192px;
+  box-sizing: content-box;
+  margin: auto;
+  margin-top: -2px;
+}
+
+.check-checkbox {
+  display: none;
+}
+
+.check-label {
+  display: block;
+  height: 20px;
+  background: #F3F4F6;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0;
+  padding: 1px;
+  position: relative;
+  cursor: pointer;
+}
+
+.check__description {
+  position: absolute;
+  display: flex;
+  width: 243px;
+}
+
+.check__text-left {
+  margin: 0;
+  margin-left: 8px;
+  margin-top: 4px;
+  color: #fff;
+}
+
+.check__text-right {
+  margin: 0;
+  margin-left: 28px;
+  margin-top: 3px;
+}
+
+.check-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+
+.check-inner::before, .check-inner::after {
+  float: left;
+  width: 50%;
+  height: 20px;
+  box-sizing: border-box;
+}
+
+.check-inner:before {
+  content: "";
+}
+
+.check-inner::after {
+  content: "";
+}
+
+.check-switch {
+  width: 123px;
+  height: 22px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 70px;
+  transition: all 0.3s ease-in 0s;
+  background: #3DBDF6;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.check-checkbox:checked + .check-label .check-inner {
+  margin-left: 0;
+}
+
+.check-checkbox:checked + .check-label .check-switch {
+  right: 0px;
+  width: 75px;
+  border-radius: 10px;
+}
+
+.blue {
+  color: #3DBDF6;
+}
+
+.white {
+  color: #fff;
+}
+
+.not-pointer {
+  cursor: default !important;
+}

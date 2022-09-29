@@ -6,14 +6,11 @@ import Footer from './components/footer/footer'
 import List from './components/list/list'
 import { getData } from '../../shared/api/main'
 import { useDispatch } from 'react-redux'
-import { useSelector } from 'react-redux'
 import { getDataFromApi } from './main.slice'
-import { RootState } from '../../app/store'
 
 function Main(): React.ReactElement {
   const dispatch = useDispatch()
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(true)
-  const storeData = useSelector( (store: RootState) => store.data)
 
   useEffect(() => {
     getData()
@@ -26,15 +23,13 @@ function Main(): React.ReactElement {
     setMenuIsOpen(!menuIsOpen)
   }
 
-  useEffect(() => {
-    console.log(' d: ', storeData)
-  }, [storeData])
-
-  //console.log(' menuIsOpen: ', menuIsOpen, storeData)
-
   return (
     <div
-      className='main'
+      className={
+        menuIsOpen
+          ? 'main'
+          : 'main-hidden'
+      }
     >
       <Roof
         menuIsOpen={menuIsOpen}
@@ -45,7 +40,9 @@ function Main(): React.ReactElement {
         setMenuIsOpen={changeMenuIsOpen}
       />
 
-      <List />
+      <List
+        menuIsOpen={menuIsOpen}
+      />
 
       <Footer />
     </div>

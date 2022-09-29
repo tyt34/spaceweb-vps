@@ -2,17 +2,27 @@
 
 .tariff {
   height: 547px;
-  min-width: calc(280px - 32px);
   max-width: 303px;
   display: flex;
   flex-direction: column;
-  background: #C4EBF8;
   border-radius: 4px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.tariff-nvme {
+  background: #E0F6FC;
+}
+
+.tariff-hdd {
+  background: #C4EBF8;
+}
+
+.tariff-turbo {
+  background: #ECFDF7;
 }
 
 .tariff__top {
@@ -60,4 +70,52 @@
 
 .tariff__select {
   margin-top: 8px;
+}
+
+.tariff__bonus {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.tariff__bonus-ico {
+  @include size(16px, 16px);
+  margin-right: 16px;
+}
+
+.tariff__bonus-text {
+  @include fontSmall;
+}
+
+.tariff__main-button {
+  @include size(100%, 36px);
+  background: #3DBDF6;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 2px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.tariff__button-text {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+@media screen and (min-width: 768px) {
+  .tariff {
+    width: calc(232px - 40px);
+    max-width: calc(232px - 40px);
+  }
+
+  .tariff__main-button {
+    width: 167px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

@@ -3,15 +3,16 @@ import Select from 'react-select'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../../../../../app/store'
 import './tariff.scss'
-import { 
+import {
   IVpsPlans,
-  ISelectType,
-  ISelectOs
-} from "../../../../../../shared/types/main"
+  ISelectType
+} from '../../../../../../shared/types/main'
 import { availability } from '../../../../../../shared/constants/main'
-import nvmeIco from "./assets/nvme.png"
-import turboIco from "./assets/turbo.svg"
-import hddIco from "./assets/hdd.png"
+import Toggle from './components/toggle/toggle'
+import nvmeIco from './assets/nvme.png'
+import turboIco from './assets/turbo.svg'
+import hddIco from './assets/hdd.png'
+import plus from './assets/plus.png'
 
 interface Props {
   info: IVpsPlans
@@ -33,18 +34,16 @@ function Tariff(
   }: Props
 ): React.ReactElement {
   const {
-    category, 
-    cpu_cores, 
-    datacenters, 
-    disk_type, 
-    price_per_month, 
+    category,
+    cpu_cores,
+    datacenters,
+    disk_type,
+    price_per_month,
     volume_disk,
     name,
     ram
   } = info
-  console.log(' t: ', name, category, info)
-  const storeData = useSelector( (store: RootState) => store.data)
-
+  const storeData = useSelector((store: RootState) => store.data)
   const [os, setOs] = useState<ISelectType>(defaultSelectOs)
   const [optionsOS, setOptionsOS] = useState<ISelectType[]>(
     [
@@ -58,20 +57,25 @@ function Tariff(
       defaultSelectSoft
     ]
   )
+  const [dataCenter, setDataCenter] = useState<boolean>(false)
+
+  function changeDataCenter(dataCenter: boolean): void {
+    setDataCenter(!dataCenter)
+  }
 
   /**
    * Подгрузка дистрибутивов
    */
   useEffect(() => {
-    storeData.result.selectOs.forEach( (dataOs) => {
+    storeData.result.selectOs.forEach((dataOs) => {
       if (
-        !optionsOS.some( (option: ISelectType) => {
+        !optionsOS.some((option: ISelectType) => {
           return option.value === dataOs.name
         })
       ) {
-        setOptionsOS( 
+        setOptionsOS(
           (optionsCategory: ISelectType[]) => [
-            ...optionsCategory, 
+            ...optionsCategory,
             {
               value: dataOs.name,
               label: dataOs.description
@@ -85,20 +89,20 @@ function Tariff(
   /**
    * Подгрузка програмного обеспечения
    */
-   useEffect(() => {
-    availability.forEach( (ava) => {
-      if (ava.name === os.value) { // ava.list это доступное по для данного дистрибутива        
+  useEffect(() => {
+    availability.forEach((ava) => {
+      if (ava.name === os.value) { // ava.list это доступное по для данного дистрибутива
         if (
-          !ava.list.some( 
+          !ava.list.some(
             (nameSoft) => {
               return nameSoft === soft.value
-           }
+            }
           )
         ) {
           setSoft(defaultSelectSoft)
-        } 
-        let newOptions = [defaultSelectSoft]
-        ava.list.forEach( (nameSoft) => {
+        }
+        const newOptions = [defaultSelectSoft]
+        ava.list.forEach((nameSoft) => {
           newOptions.push({
             value: nameSoft,
             label: nameSoft
@@ -106,24 +110,32 @@ function Tariff(
         })
         setOptionsSoft([...newOptions])
       }
-    });
+    })
   }, [storeData, os])
 
   return (
     <section
-      className='tariff'
+      className={
+        category === 'hdd'
+          ? 'tariff tariff-hdd'
+          : category === 'nvme'
+            ? 'tariff tariff-nvme'
+            : 'tariff tariff-turbo'
+      }
     >
       <div
         className='tariff__top'
       >
-        <img 
+        <img
           className='tariff__ico'
           src={
-            category === 'nvme' ? nvmeIco : 
-            category === 'turbo' ? turboIco :
-            category === 'hdd' ? hddIco : hddIco
+            category === 'nvme'
+              ? nvmeIco
+              : category === 'turbo'
+                ? turboIco
+                : category === 'hdd' ? hddIco : hddIco
           }
-          alt="иконка отображающая категорию тарифного плана" 
+          alt="иконка отображающая категорию тарифного плана"
         />
         <p
           className='tariff__title'
@@ -132,7 +144,7 @@ function Tariff(
         </p>
       </div>
 
-      <p 
+      <p
         className='tariff__cost'
       >
         {price_per_month} ₽/мес.
@@ -141,21 +153,21 @@ function Tariff(
       <div
         className='tariff__power'
       >
-        CPU {`\u00A0`} {/* пробел */}
-        <p 
-          className='tariff__power-number' 
-        > 
-          {cpu_cores} × 2,8 ГГц 
+        CPU {'\u00A0'} {/* пробел */}
+        <p
+          className='tariff__power-number'
+        >
+          {cpu_cores} × 2,8 ГГц
         </p>
       </div>
 
       <div
         className='tariff__power'
       >
-        RAM {`\u00A0`} {/* пробел */}
-        <p 
-          className='tariff__power-number' 
-        > 
+        RAM {'\u00A0'} {/* пробел */}
+        <p
+          className='tariff__power-number'
+        >
           {ram} МБ
         </p>
       </div>
@@ -163,10 +175,10 @@ function Tariff(
       <div
         className='tariff__power'
       >
-        DISK {`\u00A0`} {/* пробел */}
-        <p 
-          className='tariff__power-number' 
-        > 
+        DISK {'\u00A0'} {/* пробел */}
+        <p
+          className='tariff__power-number'
+        >
           {volume_disk} {disk_type}
         </p>
       </div>
@@ -214,6 +226,42 @@ function Tariff(
         Дата-центр
       </p>
 
+      <Toggle
+        dataCenter={dataCenter}
+        setDataCenter={changeDataCenter}
+        datacenters={datacenters}
+        name={name}
+      />
+
+      <div
+        className='tariff__bonus'
+      >
+        <img
+          className='tariff__bonus-ico'
+          src={plus}
+          alt="дополнение к тарифу"
+        />
+        <div
+          className='tariff__bonus-text'
+        >
+          <p>
+            2 IP-адреса (lPv4 + lPv6)
+          </p>
+          <p>
+            3 резервных копии
+          </p>
+        </div>
+      </div>
+
+      <button
+        className='tariff__main-button'
+      >
+        <p
+          className='tariff__button-text'
+        >
+          Заказать
+        </p>
+      </button>
     </section>
   )
 }

@@ -1,3 +1,11 @@
 .main {
-  /*height: 100vh;*/
+  position: absolute;
+  width: 100%;
 }
+
+.main-hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 100%
+}
+

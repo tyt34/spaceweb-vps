@@ -1,13 +1,14 @@
 @import "../../../../shared/mixins.scss";
 
 .footer {
+  position: relative;
   bottom: 0;
   @include size(calc(100% - 16px), 210px);
   background-color: #F5F5F5;
   @include fontSmall;
   padding-top: 20px;
   padding-left: 16px;
-  z-index: 2;
+  z-index: 3;
 }
 
 .footer__text-blue {
@@ -32,7 +33,7 @@
 
 @media screen and (min-width: 768px) {
   .footer {
-    width: calc(100% - 20px);
+    @include size(calc(100% - 20px), 150px);
     display: grid;
     padding-left: 20px;
     grid-template-columns: repeat(2, 1fr);

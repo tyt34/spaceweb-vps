@@ -77,7 +77,7 @@ interface ISelectPanel {
 
 export interface IVpsPlans {
   billing_id: string
-  category: string
+  category: 'nvme' | 'turbo' | 'hdd'
   category_id: string
   constructor: string
   /**
