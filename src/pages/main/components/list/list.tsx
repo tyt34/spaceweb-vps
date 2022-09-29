@@ -84,10 +84,7 @@ function List({
     })
   }, [storeData])
 
-  // console.log(' o:', optionsCategory)
-
   useEffect(() => {
-    console.log(' o:', category)
     const arrForFilter: IVpsPlans[] = []
     storeData.result.vpsPlans.forEach((tariff: IVpsPlans) => {
       if (category.value === 'all') {
