@@ -23,7 +23,7 @@
   margin-top: 5px;
 }
 
-.footer__link-img:nth-child(1) {
+.footer__buttons-img:nth-child(1) {
   margin-right: 5px;
 }
 
@@ -33,25 +33,32 @@
 
 @media screen and (min-width: 768px) {
   .footer {
-    @include size(calc(100% - 20px), 150px);
+    @include size(calc(100% - 40px), 150px);
     display: grid;
     padding-left: 20px;
-    grid-template-columns: repeat(2, 1fr);
+    padding-right: 20px;
+    grid-template-columns: 1fr auto;
     grid-template-rows: 65px 50px;
   }
 
   .footer__app {
+    width: 254px;
     margin-top: 0;
   }
 
   .footer__text-numbers {
     margin-top: 0;
   }
+
+  .footer__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 @media screen and (min-width: 1280px) {
   .footer {
-    @include size(calc(100% - 40px), 100px);
+    @include size(calc(100% - 40px), 80px);
     display: flex;
     justify-content: space-between;
   }
