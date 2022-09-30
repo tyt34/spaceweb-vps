@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/spaceweb-vps/static/css/main.948a06f2.css",
+    "main.css": "/spaceweb-vps/static/css/main.2a947b9c.css",
     "main.js": "/spaceweb-vps/static/js/main.c947ed19.js",
     "static/js/787.171477be.chunk.js": "/spaceweb-vps/static/js/787.171477be.chunk.js",
     "static/media/Proxima-Nova-400.ttf": "/spaceweb-vps/static/media/Proxima-Nova-400.8181ca4b7c2d1189d78a.ttf",
@@ -8,12 +8,12 @@
     "static/media/Proxima-Nova-300.otf": "/spaceweb-vps/static/media/Proxima-Nova-300.9d69a5449e101ad71e3d.otf",
     "index.html": "/spaceweb-vps/index.html",
     "static/media/turbo.svg": "/spaceweb-vps/static/media/turbo.f5a34f46d6c50218946a0d4f15da53bd.svg",
-    "main.948a06f2.css.map": "/spaceweb-vps/static/css/main.948a06f2.css.map",
+    "main.2a947b9c.css.map": "/spaceweb-vps/static/css/main.2a947b9c.css.map",
     "main.c947ed19.js.map": "/spaceweb-vps/static/js/main.c947ed19.js.map",
     "787.171477be.chunk.js.map": "/spaceweb-vps/static/js/787.171477be.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.948a06f2.css",
+    "static/css/main.2a947b9c.css",
     "static/js/main.c947ed19.js"
   ]
 }
