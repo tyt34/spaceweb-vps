@@ -28,32 +28,36 @@ function Footer(): React.ReactElement {
       </div>
 
       <div
-        className='footer__text-app'
+        className='footer__app'
       >
-        <p>
+        <p className='footer__app-title'>
           Скачать приложение
         </p>
-        <a
-          className='footer__link-app'
-          href="https://play.google.com/store/apps/details?id=ru.sweb.app&hl=ru"
-        >
-          <img
-            className='footer__link-img'
-            src={google}
-            alt="иконка приложения google play"
-          />
-        </a>
 
-        <a
-          className='footer__link-app'
-          href="https://apps.apple.com/ru/app/spaceweb-%D1%85%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B3/id1583597572"
-        >
-          <img
-            className='footer__link-img'
-            src={apple}
-            alt="иконка приложения apple store"
-          />
-        </a>
+        <div className='footer__buttons'>
+          <a
+            className='footer__link-app'
+            href="https://play.google.com/store/apps/details?id=ru.sweb.app&hl=ru"
+          >
+            <img
+              className='footer__link-img'
+              src={google}
+              alt="иконка приложения google play"
+            />
+          </a>
+
+          <a
+            className='footer__link-app'
+            href="https://apps.apple.com/ru/app/spaceweb-%D1%85%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B3/id1583597572"
+          >
+            <img
+              className='footer__link-img'
+              src={apple}
+              alt="иконка приложения apple store"
+            />
+          </a>
+        </div>
+        
       </div>
 
       <div

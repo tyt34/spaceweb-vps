@@ -46,6 +46,7 @@
   width: calc(100%);
   margin-left: auto;
   margin-right: auto;
+  @include fontNormal;
 }
 
 @media screen and (min-width: 768px) {
