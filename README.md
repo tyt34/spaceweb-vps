@@ -7,7 +7,7 @@
 ![](https://shields.io/badge/-TypeScript-2D79C7)
 ![](https://shields.io/badge/-ESLint-4A31C3)
 ![](https://shields.io/badge/-Redux-764ABC)
-![](https://shields.io/badge/-Redux_Tollkit-764ABC)
+![](https://shields.io/badge/-Redux_Toolkit-764ABC)
 
 ## Описание
 - В данном приложение демонстрируется список тарифных планов компании spaceweb полученные по api.
